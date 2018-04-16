@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'Lato-Hairline';
+  src: url(../fonts/Lato-hairline.ttf);
+}
+
 *{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Lato-Hairline";
 }
 
 .container{
@@ -15,15 +21,75 @@
 /*HEADER*/
 header{
 	width: 100%;
-	background-color: white;
 }
 
 .navSection{
-	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%; 
+	padding: 5px;
+}
+
+h1{
+	padding: 10px;
+}
+
+.logo{
+	text-decoration: none;
+	color: black;	
+}
+
+nav a{
+	margin: 5px;
+	padding: 10px;
+	text-decoration: none;
+	color: black;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+nav a:hover{
+	border:1px solid black;
 }
 
 .presentacion{
-  width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+  	width: 100%;
+  	padding: 10px;
+  	font-size: 14px;
+}
+.presentacion img{
+	width: 100%;
+}
+.quienesSomos{
+	width: 50%
+}
+
+.quienesSomos p{
+	margin-bottom: 30px;
+}
+
+.quienesSomos h2{
+	margin-bottom: 10px;
+}
+
+.fa {
+    padding: 10px;
+    border: 1px solid;
+    font-size: 25px;
+    color:black;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+/*slider*/
+.slider{
+	width: 100%
 }
 
 /*slider*/
@@ -46,27 +112,3 @@ section, article, footer{
   margin-bottom: 5px;
 }
 
-/*BORRAR ALTURA Y COLOR DE LOS CONTENEDORES*/
-
-section, article, footer{
-  background-color: grey;
-}
-
-.navSection{
-	height: 90px;
-}
-
-.presentacion{
-  height: 130px;
-}
-
-.slider{
-	height: 360px;
-}
-
-article{
-	height: 190px;
-}
-footer{
-	height: 60px;
-}
