@@ -11,9 +11,6 @@
 }
 
 .container{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
 	width: 100%;
 	padding: 10px 20px;
 }
@@ -144,6 +141,12 @@ border-radius: 8px;
 }
 
 /*ARTICLES*/
+
+#Maca {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .variedades{
   width: 100%;
   margin: 15px;
