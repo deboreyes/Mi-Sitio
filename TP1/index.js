@@ -18,12 +18,12 @@ function loadSlider() {
     dotList.push(dot);
     gallery.appendChild(img);
     dots.appendChild(dot);
-    //Funcconabilidad dot.
+    //Funcionabilidad dot.
     dot.onclick = function() {
       setCurrentPhoto(k)
     }
   }
-  //funcionabilidad gallery.
+  //Funcionabilidad gallery.
   gallery.onclick = function() {
     setCurrentPhoto((currentPhoto + 1) % numberPhotos);
   }
@@ -54,11 +54,5 @@ function setCurrentPhoto(index) {
 
 })()
 
-
-
-
 loadSlider();
 setCurrentPhoto(0);
-
-//Uso let en lugar de var para solucionar el problema del scope en Js. IMP: no anda en todos los browser.
-//let es similar a var pero tiene scope por bloques: la variable se define y muere en la apertura y cierre de llaves.

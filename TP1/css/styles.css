@@ -27,7 +27,7 @@ header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%; 
+	width: 100%;
 	padding: 5px;
 }
 
@@ -37,7 +37,7 @@ h1{
 
 .logo{
 	text-decoration: none;
-	color: black;	
+	color: black;
 }
 
 nav a{
@@ -79,10 +79,11 @@ nav a:hover{
 }
 
 .fa {
-  padding: 10px;
+  padding: 8px;
   border: 1px solid;
-  font-size: 25px;
+  font-size: 22px;
   color:black;
+
 }
 
 .fa:hover {
@@ -111,13 +112,15 @@ border-radius: 8px;
   position: absolute;
   display: none;
   align-self: center;
+  pointer-events: none;
 }
 
 #captions p {
   color: white;
   font-size: 2em;
-  background-color: #F0BC82
+  background-color: #F0BC82;
 }
+
 
 #dots {
   position: absolute;
@@ -188,4 +191,57 @@ hr{
 
 section, article, footer{
   margin-bottom: 5px;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.contacto p {
+  align-self: center;
+}
+
+.redes_footer h2 {
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+
+.footer {
+  list-style: none;
+  align-self: center;
+}
+
+.footer_left {
+  margin: 10px 10px;;
+  text-decoration: none;
+  font-size:  0.9em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.red {
+  display: inline-block;
+  margin: 2px;
+  width: 36px;
+}
+
+.contacto {
+  width: 70%;
+  padding: 0 40px;
+}
+
+.fa-facebook {
+  padding: 8px 12px;
+}
+
+.redes_footer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
 }
