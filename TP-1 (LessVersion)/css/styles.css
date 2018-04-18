@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+}
+.flexbox_mixins {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.list_mixins {
+  list-style: none;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  color: black;
+}
+.icon_mixins {
+  padding: 8px;
+  border: 1px solid;
+  font-size: 22px;
+  color: black;
+}
+.container {
+  width: 100%;
+  padding: 10px 20px;
+}
+header {
+  width: 100%;
+}
+header section {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header .navSection {
+  align-items: center;
+}
+header .navSection .logo {
+  text-decoration: none;
+  color: black;
+}
+header .navSection nav a {
+  list-style: none;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  color: black;
+}
+header .navSection nav a:hover {
+  border: 1px solid black;
+}
+header .presentacion {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+header .presentacion img {
+  width: 100%;
+}
+header .presentacion .quienesSomos {
+  width: 50%;
+}
+header .presentacion .quienesSomos p {
+  margin-bottom: 30px;
+}
+header .presentacion .quienesSomos h2 {
+  margin-bottom: 10px;
+}
+header .presentacion .redes {
+  align-self: flex-end;
+}
+header .presentacion .fa {
+  padding: 8px;
+  border: 1px solid;
+  font-size: 22px;
+  color: black;
+}
+header .presentacion .fa:hover {
+  opacity: 0.5;
+}
+.slider-container {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  height: 340px;
+}
+.slider-container #gallery {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.slider-container #gallery:hover {
+  cursor: pointer;
+}
+.slider-container #captions {
+  position: absolute;
+  display: none;
+  align-self: center;
+  pointer-events: none;
+}
+.slider-container #captions p {
+  color: white;
+  font-size: 2em;
+  background-color: #F7901B;
+}
+.slider-container #dots {
+  position: absolute;
+  right: 20px;
+  align-self: flex-end;
+  list-style: none;
+}
+.slider-container #dots .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 10px;
+  background-color: #F0BC82;
+  border-radius: 50%;
+  transition: 0.6s ease;
+}
+.slider-container #dots .active,
+.slider-container #dots .dot:hover {
+  background-color: #F7901B;
+}
+#nuestroCafe {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: grey;
+}
+#nuestroCafe .variedades {
+  width: 100%;
+  margin: 15px;
+  text-align: center;
+}
+#nuestroCafe hr {
+  width: 1px;
+  size: 180px;
+  margin-top: 10px;
+}
+#nuestroCafe #horizontal {
+  width: 100%;
+  size: 1px;
+}
+#nuestroCafe article {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 30%;
+  height: 180px;
+  margin: 10px;
+  background-color: white;
+}
+#nuestroCafe article img {
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  align-self: center;
+}
+#nuestroCafe article .text {
+  align-self: center;
+  margin: 10px;
+  padding: 10px;
+}
+#nuestroCafe article .text h4 {
+  font-size: 18px;
+}
+#nuestroCafe article .text p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+footer {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+footer .left_footer {
+  width: 70%;
+  padding: 0 40px;
+}
+footer .left_footer ul {
+  list-style: none;
+  align-self: center;
+}
+footer .left_footer ul li {
+  margin: 10px 10px;
+  font-size: 18px;
+  text-decoration: none;
+}
+footer .left_footer ul li a {
+  text-decoration: none;
+  color: black;
+}
+footer .rigth_footer {
+  width: 20%;
+}
+footer .rigth_footer h2 {
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+}
+footer .rigth_footer ul {
+  list-style: none;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  color: black;
+  text-align: center;
+}
+footer .rigth_footer ul li {
+  display: inline-block;
+  margin: 2px;
+  width: 36px;
+}
+footer .rigth_footer ul li .fa {
+  padding: 8px;
+  border: 1px solid;
+  font-size: 22px;
+  color: black;
+}
+footer .rigth_footer ul li .fa:hover {
+  opacity: 0.5;
+}
+footer .rigth_footer ul li .fa-facebook {
+  padding: 8px 12px;
+}
+footer .rigth_footer ul li .fa-facebook a {
+  text-decoration: none;
+}

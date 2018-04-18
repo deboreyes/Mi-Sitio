@@ -115,7 +115,7 @@ border-radius: 8px;
 #captions p {
   color: white;
   font-size: 2em;
-  background-color: #F0BC82;
+  background-color: #F7901B;
 }
 
 
@@ -142,7 +142,7 @@ border-radius: 8px;
 
 /*ARTICLES*/
 
-#Maca {
+#nuestroCafe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -203,22 +203,12 @@ footer {
   justify-content: space-between;
 }
 
-.contacto p {
-  align-self: center;
-}
-
-.redes_footer h2 {
-  font-size: 1.2em;
-  font-weight: 800;
-}
-
-
-.footer {
-  list-style: none;
-  align-self: center;
-}
-
 .footer_left {
+  width: 70%;
+  padding: 0 40px;
+}
+
+.footer_left li {
   margin: 10px 10px;;
   text-decoration: none;
   font-size:  0.9em;
@@ -226,25 +216,32 @@ footer {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
-.red {
+.footer_right {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.footer_right h2 {
+  font-size: 1.2em;
+  font-weight: 800;
+  align-self: center;
+}
+
+.ul_footer{
+  list-style: none;
+  align-self: center;
+}
+
+.net {
   display: inline-block;
   margin: 2px;
   width: 36px;
 }
 
-.contacto {
-  width: 70%;
-  padding: 0 40px;
-}
-
 .fa-facebook {
   padding: 8px 12px;
-}
-
-.redes_footer {
-  display: flex;
-  flex-direction: column;
-  width: 20%;
 }
