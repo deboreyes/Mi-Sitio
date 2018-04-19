@@ -56,3 +56,26 @@ function setCurrentPhoto(index) {
 
 loadSlider();
 setCurrentPhoto(0);
+
+
+
+
+
+var hamb=document.getElementById('hamburger');
+var menu=document.getElementById('menu')
+
+//la funcion moverMenu cada vez que se produce el evento click en
+//el span hamburger, agrega o quita la clase open. Cuando hamburguer 
+//no tiene la clase open el menu se oculta(top=-100) y el span sube
+
+function moverMenu(){
+	hamb.classList.toggle("open");
+	if(hamb.getAttribute('class')){
+		menu.setAttribute("style", "top: 0;");	
+	}
+	else{
+		menu.setAttribute("style", "top: -100px;");
+	}
+  }
+  
+hamb.addEventListener('click',moverMenu);
