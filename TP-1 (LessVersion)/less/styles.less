@@ -7,7 +7,7 @@
 
 @medium: ~"only screen and (max-width:1200px)";
 @mobile: ~"only screen and (max-width: 800px)";
-@mobileSmall: ~"only screen and (max-width: 500px)";
+@mobileSmall: ~"only screen and ( min-width: 350px and max-width: 500px)";
 
 * {
   box-sizing: border-box;
@@ -155,6 +155,10 @@ header {
 
       h2 {
         padding-bottom: @commonpadd;
+
+        @media @mobile {
+          font-size: @commonsizefont * 1.4;
+        }
       }
     }
 
@@ -279,7 +283,7 @@ header {
 
     .text {
       align-self: center;
-      margin-left: 5px;
+      margin-left: 10px;
 
       @media @medium {
         width: 80%;
