@@ -50,6 +50,54 @@ nav a:hover{
 	border:1px solid black;
 }
 
+#hamburger{
+  width: 20px;
+  height: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:0.1s ease-in-out;
+  display: none;
+}
+
+#hamburger span{
+  width: 100%;
+  height: 2px;
+  background: black;
+  transition: 0.2s;
+}
+
+/*cuando #hamburger tiene la clase toggle open
+se posiciona en forma vertical,
+space around para que queden centrados
+cuando se cruzan los span*/
+#hamburger.open{
+  height: 20px;
+  transform: rotate(90deg);
+  justify-content: space-around;
+}
+
+/*seteo para poder rotar cada span*/
+.open span{
+  transform-origin: left;
+}
+
+/*al hacer click en #hamburguer
+el primer span rota a la derecha
+el segundo desaparece
+y el tercero rota a la izquierda*/
+.open .first{
+  transform: rotate(45deg) ;
+}
+
+.open .second{
+  opacity: 0;
+}
+
+.open .third{
+  transform: rotate(-45deg);
+}
+
 .presentacion{
 	display: flex;
 	justify-content: space-between;
@@ -116,6 +164,8 @@ border-radius: 8px;
   width: 80%;
   align-self: center;
   pointer-events: none;
+  text-align: center;
+  opacity: 0.8;
 }
 
 #captions p {
@@ -127,6 +177,7 @@ border-radius: 8px;
 
 #dots {
   position: absolute;
+
   right: 20px;
   align-self:flex-end;
   list-style: none;
@@ -237,17 +288,11 @@ a {
   align-self: center;
 }
 
-.ul_footer{
+.redes_footer{
   list-style: none;
   align-self: center;
   display: flex;
   flex-wrap: nowrap;
-}
-
-.net {
-  display: inline-block;
-  margin: 2px;
-  width: 36px;
 }
 
 .fa-facebook {
@@ -255,74 +300,7 @@ a {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#hamburger{
-  width: 20px;
-  height: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition:0.1s ease-in-out;
-}
-
-#hamburger span{
-    width: 100%;
-    height: 2px;
-    background: black;
-    transition: 0.2s;
-}
-
-/*cuando #hamburger tiene la clase toggle open
-se posiciona en forma vertical,
-space around para que queden centrados
-cuando se cruzan los span*/
-#hamburger.open{
-    height: 20px;
-    transform: rotate(90deg);
-    justify-content: space-around;
-}
-
-/*seteo para poder rotar cada span*/
-.open span{
-      transform-origin: left;
-}
-
-/*al hacer click en #hamburguer
-el primer span rota a la derecha
-el segundo desaparece
-y el tercero rota a la izquierda*/
-.open .first{
-        transform: rotate(45deg) ;
-}
-
-.open .second{
-        opacity: 0;
-}
-
-.open .third{
-        transform: rotate(-45deg);
-}
-
-
-#hamburger{
-  display: none;
-}
-
-
-
-@media(min-width: 600px)and (max-width: 800px){
+@media (max-width: 800px){
   h1{
     padding:3px 0 0 0;
   }
@@ -337,54 +315,18 @@ y el tercero rota a la izquierda*/
   padding: 2px;
   font-size: 12px;
   }
-  
+
   #hamburger{
     display: flex;
   }
 
   .fa {
   font-size: 14px;
-  } 
-
-  #nuestroCafe{
-  display: none;
- }
-
- .footer_right h2 {
-  font-size: 1em;
   }
 
-}
-
-
-@media(max-width: 599px){
-  h1{
-    padding:3px 0 0 0;
-  }
-
-  nav{
-  position: absolute;
-  top: -100px;
-  transition: 0.2s ease-in-out;
-  }
-
-  nav a{
-  padding: 2px;
-  font-size: 12px;
-  }
-  
-  #hamburger{
-    display: flex;
-  }
-
-  .presentacion{
-    padding: 5px;
-    font-size: 10px;
-  }
-  
   .quienesSomos{
     width: 100%;
-  } 
+  }
 
   .quienesSomos p{
     margin-bottom: 0;
@@ -397,21 +339,24 @@ y el tercero rota a la izquierda*/
   .fa {
   font-size: 14px;
   }
-  
-  .slider-container{
-    display: none;
-  }
-  
+
+
   .footer_right h2 {
   font-size: 1em;
   }
 
   .redes{
-	display: none;
-  }
-
- #nuestroCafe{
   display: none;
   }
-}
 
+
+ .presentacion{
+   padding: 5px;
+   font-size: 10px;
+ }
+
+ .footer_right h2 {
+  font-size: 1em;
+  }
+
+}

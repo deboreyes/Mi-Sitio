@@ -6,94 +6,176 @@
   font-weight: lighter;
 }
 .flexbox_mixins {
-  padding: 5px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .list_mixins {
+  padding: 10px;
   list-style: none;
-  text-decoration: none;
   font-size: 16px;
   font-weight: bold;
-  padding: 10px;
   color: black;
+  text-decoration: none;
 }
 .icon_mixins {
-  padding: 8px;
-  border: 1px solid;
-  font-size: 22px;
+  padding: 10px;
+  margin: 0 5px;
+  font-size: 22.4px;
   color: black;
+  border: 1px solid;
 }
 .container {
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px;
 }
 header {
   width: 100%;
 }
-header section {
+header .navSection {
   width: 100%;
-  padding: 5px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-header .navSection {
+  padding-top: 20px;
   align-items: center;
+}
+@media only screen and (max-width: 800px) {
+  header .navSection {
+    justify-content: center;
+  }
+}
+header .navSection a h1 {
+  font-size: 32px;
+  font-weight: 900;
 }
 header .navSection .logo {
   text-decoration: none;
   color: black;
 }
+@media only screen and (max-width: 800px) {
+  header .navSection nav {
+    position: absolute;
+    top: -100px;
+    transition: 0.2s ease-in-out;
+  }
+}
 header .navSection nav a {
+  padding: 10px;
   list-style: none;
-  text-decoration: none;
   font-size: 16px;
   font-weight: bold;
-  padding: 10px;
   color: black;
+  text-decoration: none;
+}
+@media only screen and (max-width: 500px) {
+  header .navSection nav a {
+    font-size: 11.2px;
+  }
 }
 header .navSection nav a:hover {
   border: 1px solid black;
 }
-header .presentacion {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
+header .navSection #hamburger {
+  width: 20px;
+  height: 15px;
+  display: none;
+  position: absolute;
+  right: 20px;
+  transition: 0.1s ease-in-out;
 }
-header .presentacion img {
+@media only screen and (max-width: 800px) {
+  header .navSection #hamburger {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+header .navSection #hamburger .first,
+header .navSection #hamburger .second,
+header .navSection #hamburger .third {
   width: 100%;
+  height: 2px;
+  background: black;
+  transition: 0.2s;
+}
+header .navSection .open {
+  justify-content: space-around;
+  height: 20px;
+  transform: rotate(90deg);
+}
+header .navSection .open .first,
+header .navSection .open .second,
+header .navSection .open .third {
+  transform-origin: left;
+}
+header .navSection .open .first {
+  transform: rotate(45deg);
+}
+header .navSection .open .second {
+  opacity: 0;
+}
+header .navSection .open .third {
+  transform: rotate(-45deg);
+}
+header .presentacion {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+@media only screen and (max-width: 800px) {
+  header .presentacion {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 header .presentacion .quienesSomos {
-  width: 50%;
+  max-width: 80%;
 }
-header .presentacion .quienesSomos p {
-  margin-bottom: 30px;
+@media only screen and (max-width: 800px) {
+  header .presentacion .quienesSomos {
+    width: 100%;
+    font-size: 22.4px;
+    text-align: center;
+  }
 }
 header .presentacion .quienesSomos h2 {
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 header .presentacion .redes {
+  display: flex;
+  flex-wrap: nowrap;
   align-self: flex-end;
 }
+@media only screen and (max-width: 800px) {
+  header .presentacion .redes {
+    display: none;
+  }
+}
 header .presentacion .fa {
-  padding: 8px;
-  border: 1px solid;
-  font-size: 22px;
+  padding: 10px;
+  margin: 0 5px;
+  font-size: 22.4px;
   color: black;
+  border: 1px solid;
 }
 header .presentacion .fa:hover {
   opacity: 0.5;
 }
 .slider-container {
-  padding: 5px;
+  width: 100%;
+  height: 340px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 100%;
   justify-content: center;
-  height: 340px;
+}
+@media only screen and (max-width: 800px) {
+  .slider-container {
+    display: none;
+  }
 }
 .slider-container #gallery {
   overflow: hidden;
@@ -103,14 +185,17 @@ header .presentacion .fa:hover {
   cursor: pointer;
 }
 .slider-container #captions {
-  position: absolute;
+  width: 80%;
   display: none;
+  position: absolute;
+  text-align: center;
   align-self: center;
   pointer-events: none;
+  opacity: 0.8;
 }
 .slider-container #captions p {
   color: white;
-  font-size: 2em;
+  font-size: 40px;
   background-color: #F7901B;
 }
 .slider-container #dots {
@@ -132,115 +217,113 @@ header .presentacion .fa:hover {
 .slider-container #dots .dot:hover {
   background-color: #F7901B;
 }
-#nuestroCafe {
-  padding: 5px;
+.nuestroCafe {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  color: grey;
-}
-#nuestroCafe .variedades {
-  width: 100%;
-  margin: 15px;
   text-align: center;
 }
-#nuestroCafe hr {
-  width: 1px;
-  size: 180px;
-  margin-top: 10px;
+@media only screen and (max-width: 800px) {
+  .nuestroCafe {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
-#nuestroCafe #horizontal {
+.nuestroCafe h2 {
   width: 100%;
-  size: 1px;
+  margin: 15px 0;
 }
-#nuestroCafe article {
-  padding: 5px;
+.nuestroCafe article {
+  width: 30%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: center;
   flex-wrap: nowrap;
-  width: 30%;
-  height: 180px;
-  margin: 10px;
-  background-color: white;
+  text-align: left;
 }
-#nuestroCafe article img {
-  width: 150px;
-  height: 150px;
-  margin: 5px;
+@media only screen and (max-width:1200px) {
+  .nuestroCafe article {
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .nuestroCafe article {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 22.4px;
+  }
+}
+.nuestroCafe article img {
+  max-width: 150px;
   align-self: center;
 }
-#nuestroCafe article .text {
+@media only screen and (max-width: 800px) {
+  .nuestroCafe article img {
+    max-width: 80%;
+  }
+}
+.nuestroCafe article .text {
   align-self: center;
-  margin: 10px;
-  padding: 10px;
+  margin-left: 5px;
 }
-#nuestroCafe article .text h4 {
-  font-size: 18px;
+@media only screen and (max-width:1200px) {
+  .nuestroCafe article .text {
+    width: 80%;
+    margin: 10px 0;
+  }
 }
-#nuestroCafe article .text p {
-  margin-top: 5px;
-  font-size: 14px;
+.nuestroCafe article .text h3 {
+  margin-bottom: 5px;
 }
 footer {
-  padding: 5px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 100%;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+  background-color: #F0BC82;
 }
 footer .left_footer {
-  width: 70%;
-  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
 }
-footer .left_footer ul {
-  list-style: none;
-  align-self: center;
-}
-footer .left_footer ul li {
-  margin: 10px 10px;
-  font-size: 18px;
+footer .left_footer a {
   text-decoration: none;
-}
-footer .left_footer ul li a {
-  text-decoration: none;
+  margin: 2px 0;
   color: black;
 }
-footer .rigth_footer {
-  width: 20%;
-}
-footer .rigth_footer h2 {
-  font-size: 14px;
-  font-weight: 800;
-  text-align: center;
-}
-footer .rigth_footer ul {
-  list-style: none;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px;
-  color: black;
-  text-align: center;
-}
-footer .rigth_footer ul li {
-  display: inline-block;
-  margin: 2px;
-  width: 36px;
-}
-footer .rigth_footer ul li .fa {
-  padding: 8px;
-  border: 1px solid;
-  font-size: 22px;
-  color: black;
-}
-footer .rigth_footer ul li .fa:hover {
+footer .left_footer a:hover {
   opacity: 0.5;
 }
-footer .rigth_footer ul li .fa-facebook {
-  padding: 8px 12px;
+footer .rigth_footer {
+  padding: 10px 20px;
 }
-footer .rigth_footer ul li .fa-facebook a {
-  text-decoration: none;
+footer .rigth_footer h4 {
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 10px;
+}
+footer .rigth_footer .redes_footer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+}
+footer .rigth_footer .redes_footer .fa {
+  padding: 10px;
+  margin: 0 5px;
+  font-size: 22.4px;
+  color: black;
+  border: 1px solid;
+}
+footer .rigth_footer .redes_footer .fa:hover {
+  opacity: 0.5;
+}
+footer .rigth_footer .redes_footer .fa-facebook {
+  padding: 10px 12px;
 }

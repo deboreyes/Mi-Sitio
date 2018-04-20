@@ -59,23 +59,22 @@ setCurrentPhoto(0);
 
 
 
-
-
 var hamb=document.getElementById('hamburger');
+console.log(hamb);
 var menu=document.getElementById('menu')
-
+console.log(menu);
 //la funcion moverMenu cada vez que se produce el evento click en
-//el span hamburger, agrega o quita la clase open. Cuando hamburguer 
+//el span hamburger, agrega o quita la clase open. Cuando hamburguer
 //no tiene la clase open el menu se oculta(top=-100) y el span sube
 
 function moverMenu(){
 	hamb.classList.toggle("open");
 	if(hamb.getAttribute('class')){
-		menu.setAttribute("style", "top: 0;");	
+		menu.setAttribute("style", "top: 0;");
 	}
 	else{
 		menu.setAttribute("style", "top: -100px;");
 	}
   }
-  
+
 hamb.addEventListener('click',moverMenu);

@@ -3,31 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mi sitio</title>
+	<title>Mi sitio Less</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" />
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 <body>
 	<div class="container">
-
 		<header>
 			<section class="navSection">
 				<a href="#" class="logo"><h1>COFFEE STORE</h1></a>
-				<nav>
+				<nav id="menu" class="menu">
 					<a href="#">HOME</a>
 					<a href="#">QUIENES SOMOS</a>
 					<a href="#">SERVICIOS</a>
 					<a href="#">CONTACTO</a>
 				</nav>
+				<span id="hamburger">
+					<span class="first"></span>
+					<span class="second"></span>
+					<span class="third"></span>
+				</span>
 			</section>
-
 			<section class="presentacion">
 				<figure>
 					<img src="imgs/cafe.png" alt="">
 				</figure>
 				<div class="quienesSomos">
-					<h2>Quienes somos</h2>
+					<h2>QUIENES SOMOS</h2>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 					</p>
@@ -38,66 +41,56 @@
         </div>
 			</section>
 		</header>
-
 		<section class="slider-container">
 			<div id="gallery"></div>
-
 			<div id="captions">
 				<p>TE INVITAMOS A DESCUBRIR UNA NUEVA EXPERIENCIA</p>
 			</div>
-
 			<ul id="dots"></ul>
 		</section>
-
-		<section id="nuestroCafe">
-			<div class="variedades">
-				<h2>Nuestros cafés</h2>
-			</div>
+		<section class="nuestroCafe">
+				<h2>NUESTROS CAFÉS</h2>
 			<article>
 				<img src="imgs/section3.jpg" alt="section3">
 				<div class="text">
-					<h4>Barista</h4>
-					<p>Nuestro tradicional espresso. Una cuidadosa selección de granos brasileros, permiten obtener un café pleno, de cuerpo suave, sin acidez ni amargor.</p>
+					<h3>Barista</h3>
+					<p>
+						Nuestro tradicional espresso. Una cuidadosa selección de granos brasileros, permiten obtener un café pleno, de cuerpo suave, sin acidez ni amargor.
+					</p>
 				</div>
 			</article>
-			<hr>
 			<article>
 				<img src="imgs/section2.jpg" alt="section2">
 				<div class="text">
-					<h4>Scegliere</h4>
-					<p>Formado por tres de nuestros mejores varietales. Brasil Santos Mogiana, Colombia Excelso y Moka; un café de cuerpo medio y una combinación única.</p>
+					<h3>Scegliere</h3>
+					<p>
+						Formado por tres de nuestros mejores varietales. Brasil Santos Mogiana, Colombia Excelso y Moka; un café de cuerpo medio y una combinación única.
+					</p>
 				</div>
 			</article>
-			<hr>
 			<article>
 				<img src="imgs/section4.jpg" alt="section4">
 				<div class="text">
-					<h4>Minka (espresso)</h4>
-					<p>Desarrollado para satisfacer a los amantes del espresso intenso. Café de gran cuerpo, con un sabor especiado y una delicada acidez.</p>
+					<h3>Minka (espresso)</h3>
+					<p>
+						Desarrollado para satisfacer a los amantes del espresso intenso. Café de gran cuerpo, con un sabor especiado y una delicada acidez.
+					</p>
 				</div>
 			</article>
-			<hr id="horizontal">
-		</section>
+		</div>
 		<footer>
 			<div class="left_footer">
-				<ul>
-					<li>MI SITIO:</li>
-					<li><a href="mailto:contacto@misitio.com" >Contacto</a></li>
-				</ul>
+				<a href="">Nuestra Empresa</a>
+				<a href="">Breve Historia</a>
+				<a href="mailto:contacto@misitio.com" >Contacto</a>
 			</div>
 			<div class="rigth_footer">
-				<h2>CONECTEMOS!</h2>
-				<ul>
-					<li>
-						<a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
-					</li>
-					<li class="red">
-						<a target="_blank" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
-					</li>
-					<li class="red">
-						<a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
-					</li>
-			  </ul>
+				<h4>CONECTEMOS!</h4>
+				<div class="redes_footer">
+					<a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+					<a target="_blank" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+					<a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+        </div>
 			</div>
 		</footer>
 	</div>

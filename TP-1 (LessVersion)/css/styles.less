@@ -1,7 +1,13 @@
 //VARIABLES GLOBALES
-
 @firstcolor:  #F7901B;
 @secondcolor: #F0BC82;
+
+@commonpadd: 10px;
+@commonsizefont: 16px;
+
+@medium: ~"only screen and (max-width:1200px)";
+@mobile: ~"only screen and (max-width: 800px)";
+@mobileSmall: ~"only screen and (max-width: 500px)";
 
 * {
   box-sizing: border-box;
@@ -12,43 +18,50 @@
 }
 
 .flexbox_mixins {
-  padding: 5px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .list_mixins {
+  padding: @commonpadd;
   list-style: none;
-  text-decoration: none;
-  font-size: 16px;
+  font-size: @commonsizefont;
   font-weight: bold;
-  padding: 10px;
   color: black;
+  text-decoration: none;
 }
 
 .icon_mixins {
-  padding: 8px;
-  border: 1px solid;
-  font-size: 22px;
+  padding: @commonpadd;
+  margin: 0 5px;
+  font-size: @commonsizefont * 1.4;
   color: black;
+  border: 1px solid;
 }
 
 .container {
   width: 100%;
-  padding: 10px 20px;
+  padding: @commonpadd;
 }
 
 header {
   width: 100%;
 
-  section {
+  .navSection {
     width: 100%;
     .flexbox_mixins;
-  }
-
-  .navSection {
+    padding-top: @commonpadd * 2;
     align-items: center;
+
+    @media @mobile {
+      justify-content: center;
+    }
+
+    a h1 {
+      font-size: @commonsizefont * 2;
+      font-weight: 900;
+    }
 
     .logo {
       text-decoration: none;
@@ -56,77 +69,146 @@ header {
     }
 
     nav {
+
+      @media @mobile {
+        position: absolute;
+        top: -100px;
+        transition: 0.2s ease-in-out;
+
+      }
       a {
         .list_mixins;
+
+        @media @mobileSmall {
+          font-size: @commonsizefont * 0.7;
+        }
+
+        &:hover {
+          border:1px solid black;
+        }
+      }
+    }
+
+    #hamburger{
+      width: 20px;
+      height: 15px;
+      display: none;
+      position: absolute;
+      right: 20px;
+      transition:0.1s ease-in-out;
+
+      @media @mobile {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
       }
 
-      a:hover {
-        border:1px solid black;
+      .first, .second, .third {
+        width: 100%;
+        height: 2px;
+        background: black;
+        transition: 0.2s;
+      }
+    }
+
+    .open {
+      justify-content: space-around;
+      height: 20px;
+      transform: rotate(90deg);
+
+      .first, .second, .third {
+        transform-origin: left;
+      }
+
+      .first {
+        transform: rotate(45deg);
+      }
+
+      .second {
+        opacity: 0;
+      }
+
+      .third {
+        transform: rotate(-45deg);
       }
     }
   }
 
   .presentacion {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
+    .flexbox_mixins;
+    flex-wrap: nowrap;
+    padding: @commonpadd;
 
-    img {
-      width: 100%;
+    @media @mobile {
+      flex-direction: column;
+      align-items: center;
     }
 
     .quienesSomos {
-      width: 50%;
+      max-width: 80%;
 
-      p {
-        margin-bottom: 30px;
+      @media @mobile {
+        width: 100%;
+        font-size: @commonsizefont * 1.4;
+        text-align: center;
       }
 
       h2 {
-        margin-bottom: 10px;
+        padding-bottom: @commonpadd;
       }
-
     }
 
     .redes {
+      display: flex;
+      flex-wrap: nowrap;
       align-self: flex-end;
+
+      @media @mobile {
+        display: none;
+      }
     }
 
     .fa {
       .icon_mixins;
 
-    }
-
-    .fa:hover {
-      opacity: 0.5;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 }
 
 .slider-container {
-  .flexbox_mixins;
   width: 100%;
-  justify-content: center;
   height: 340px;
+  .flexbox_mixins;
+  justify-content: center;
+
+  @media @mobile {
+    display: none;
+  }
 
   #gallery {
     overflow: hidden;
     border-radius: 8px;
-  }
 
-  #gallery:hover {
-    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   #captions {
-    position: absolute;
+    width: 80%;
     display: none;
+    position: absolute;
+    text-align: center;
     align-self: center;
     pointer-events: none;
+    opacity: 0.8;
 
     p {
       color: white;
-      font-size: 2em;
+      font-size: @commonsizefont * 2.5;
       background-color: @firstcolor;
     }
   }
@@ -153,120 +235,112 @@ header {
   }
 }
 
-#nuestroCafe {
+.nuestroCafe {
+  width: 100%;
   .flexbox_mixins;
-  color: grey;
+  text-align: center;
 
-  .variedades {
-    width: 100%;
-    margin: 15px;
-    text-align: center;
+  @media @mobile{
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
-  hr {
-     width: 1px;
-     size: 180px;
-     margin-top: 10px;
-  }
-
-  #horizontal {
+  h2 {
     width: 100%;
-    size: 1px;
+    margin: 15px 0;
   }
 
   article {
-    .flexbox_mixins;
-    justify-content: center;
-    flex-wrap: nowrap;
     width: 30%;
-    height: 180px;
-    margin: 10px;
-    background-color: white;
+    .flexbox_mixins;
+    flex-wrap: nowrap;
+    text-align: left;
+
+    @media  @medium {
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    @media @mobile {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: @commonsizefont * 1.4;
+    }
 
     img {
-      width: 150px;
-      height: 150px;
-      margin: 5px;
+      max-width: 150px;
       align-self: center;
+
+      @media @mobile {
+        max-width: 80%;
+      }
     }
 
     .text {
       align-self: center;
-      margin: 10px;
-      padding: 10px;
+      margin-left: 5px;
 
-      h4 {
-        font-size: 18px;
+      @media @medium {
+        width: 80%;
+        margin: 10px 0;
       }
 
-      p {
-        margin-top: 5px;
-        font-size: 14px;
+
+      h3 {
+        margin-bottom: 5px;
       }
     }
   }
 }
 
 footer {
-  .flexbox_mixins;
   width: 100%;
+  .flexbox_mixins;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+  background-color: @secondcolor;
 
   .left_footer {
-    width: 70%;
-    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    padding: @commonpadd (@commonpadd * 2);
+    a {
+      text-decoration: none;
+      margin: 2px 0;
+      color: black;
 
-    ul {
-      list-style: none;
-      align-self: center;
-
-      li {
-        margin: 10px 10px;
-        font-size:  18px;
-        text-decoration: none;
-
-        a {
-          text-decoration: none;
-          color: black;
-        }
+      &:hover {
+        opacity: 0.5;
       }
-
     }
   }
 
   .rigth_footer {
-    width: 20%;
+    padding: @commonpadd (@commonpadd * 2);
 
-    h2 {
-      font-size: 14px;
+    h4{
       font-weight: 800;
       text-align: center;
+      margin-bottom: 10px;
     }
 
-    ul {
-      .list_mixins;
+    .redes_footer {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
       text-align: center;
 
-      li {
-        display: inline-block;
-        margin: 2px;
-        width: 36px;
+      .fa {
+        .icon_mixins;
 
-        .fa {
-          .icon_mixins;
-        }
-
-        .fa:hover {
+        &:hover {
           opacity: 0.5;
-        }
-
-        .fa-facebook {
-          padding: 8px 12px;
-
-        a {
-          text-decoration: none;
         }
       }
 
+      .fa-facebook {
+        padding: @commonpadd 12px;
       }
     }
   }
