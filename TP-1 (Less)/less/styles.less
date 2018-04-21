@@ -7,7 +7,7 @@
 
 @medium: ~"only screen and (max-width:1200px)";
 @mobile: ~"only screen and (max-width: 800px)";
-@mobileSmall: ~"only screen and ( min-width: 350px and max-width: 500px)";
+@mobileSmall: ~"only screen and (max-width: 450px)";
 
 * {
   box-sizing: border-box;
@@ -80,7 +80,8 @@ header {
         .list_mixins;
 
         @media @mobileSmall {
-          font-size: @commonsizefont * 0.7;
+          font-size: @commonsizefont * 0.6;
+          padding: @commonpadd / 2;
         }
 
         &:hover {
